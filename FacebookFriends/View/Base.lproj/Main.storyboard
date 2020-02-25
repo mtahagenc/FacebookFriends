@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login Page View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginPageViewController" customModule="FacebookFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginPageBackground" translatesAutoresizingMaskIntoConstraints="NO" id="Aqc-DZ-x5v">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your username please" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84g-fF-D1q">
+                                <rect key="frame" x="30" y="194" width="354" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="M2j-ZB-xdX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password lease" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cBy-DD-N7o">
+                                <rect key="frame" x="30" y="244" width="354" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="VSX-To-hXS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" textContentType="password"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muu-33-gP6">
+                                <rect key="frame" x="30" y="294" width="354" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hJr-fZ-Jkz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UIz-NL-0OB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="muu-33-gP6" firstAttribute="top" secondItem="cBy-DD-N7o" secondAttribute="bottom" constant="10" id="1i0-O0-zff"/>
+                            <constraint firstItem="cBy-DD-N7o" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="4kX-sZ-d3x"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="84g-fF-D1q" secondAttribute="trailing" constant="30" id="HxJ-Io-YWz"/>
+                            <constraint firstItem="Aqc-DZ-x5v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="INO-Uv-4za"/>
+                            <constraint firstAttribute="bottom" secondItem="Aqc-DZ-x5v" secondAttribute="bottom" id="SGA-VM-NUT"/>
+                            <constraint firstItem="84g-fF-D1q" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="WBI-2i-Eeb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cBy-DD-N7o" secondAttribute="trailing" constant="30" id="X98-Dk-1sN"/>
+                            <constraint firstItem="muu-33-gP6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="bGS-x2-Gb7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="muu-33-gP6" secondAttribute="trailing" constant="30" id="ibZ-Xs-d2q"/>
+                            <constraint firstItem="Aqc-DZ-x5v" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="nHQ-zz-SwL"/>
+                            <constraint firstItem="cBy-DD-N7o" firstAttribute="top" secondItem="84g-fF-D1q" secondAttribute="bottom" constant="10" id="pBA-A8-PsC"/>
+                            <constraint firstItem="Aqc-DZ-x5v" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="trH-U3-NUR"/>
+                            <constraint firstItem="84g-fF-D1q" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="wo2-Jp-37i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="Aqc-DZ-x5v" id="LwY-GT-64A"/>
+                        <outlet property="passwordTextField" destination="cBy-DD-N7o" id="krL-EH-XXQ"/>
+                        <outlet property="userNameTextField" destination="84g-fF-D1q" id="m21-pF-HOG"/>
+                        <segue destination="TxM-hY-DLp" kind="show" identifier="login" id="ATE-fF-r4S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+        </scene>
+        <!--Friends Table View Controller-->
+        <scene sceneID="Do4-t3-Mja">
+            <objects>
+                <tableViewController modalPresentationStyle="fullScreen" id="TxM-hY-DLp" customClass="FriendsTableViewController" customModule="FacebookFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dsW-rN-geH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="lSF-jk-GxG">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lSF-jk-GxG" id="1Mq-Vu-snj">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TxM-hY-DLp" id="X8N-Jr-bCi"/>
+                            <outlet property="delegate" destination="TxM-hY-DLp" id="hyv-QG-yAZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ZW0-oX-Gqh"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZSM-DB-JG7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="127"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="loginPageBackground" width="1200" height="1600"/>
+    </resources>
+</document>
