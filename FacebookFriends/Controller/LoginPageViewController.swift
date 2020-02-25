@@ -10,12 +10,15 @@ import UIKit
 
 class LoginPageViewController: UIViewController {
 
-    
+    var FriendsArray : [Friend]? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        userNameTextField.text = "zdah4"
+        passwordTextField.text = "hebele"
         blurEffect()
+        
     }
     
         @IBOutlet weak var userNameTextField: UITextField!
@@ -29,7 +32,8 @@ class LoginPageViewController: UIViewController {
                 alert()
                 print("Empty")
             } else {
-                performSegue(withIdentifier: "login", sender: self)
+                
+                login(url: "https://api.myjson.com/bins/zdah4")
                 print("notEmpty")
             }
             
@@ -37,7 +41,7 @@ class LoginPageViewController: UIViewController {
         
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             let destinationVC = segue.destination as! FriendsTableViewController
-            destinationVC.username = userNameTextField.text
+            destinationVC.friendsArray = FriendsArray
         }
     
     func alert() {
@@ -58,6 +62,18 @@ class LoginPageViewController: UIViewController {
         blurEffectView.frame = backgroundImage.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         backgroundImage.addSubview(blurEffectView)
+    }    
+    func login (url:String) {
+        WebServices().get(url) { (type, model: [Friend]?) in
+            switch type {
+            case .Succeed :
+                self.FriendsArray = model
+                self.performSegue(withIdentifier: "login", sender: self)
+            case .Failed : print("Error Failed")
+            case .FailedDecode : print("Error FailedDecode")
+            default : break
+            }
+        }
     }
 
 }

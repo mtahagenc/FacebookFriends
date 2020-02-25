@@ -12,7 +12,7 @@ public struct Friend : Decodable {
     let id : String?
     let isActive : Bool?
     let picture : String?
-    let age : String?
+    let age : Int?
     let eyeColor : String?
     let name : String?
     let gender : String?
