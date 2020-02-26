@@ -17,21 +17,13 @@ extension Int {
 }
 
 extension UIImageView {
-//    func load(urlString: String) {
-//        let https = "https" + urlString.dropFirst(4)
-//        let url = URL(string: https)
-//        self.image!.kf.setImage(with: url)
-//    }
-    
     @objc func setImageWithKF(_ url : String?) {
-//        self.image = UIImage()
         if let imageUrl = url {
             if let urls = URL(string : imageUrl) {
                 if imageUrl != "" {
                     let resource = ImageResource(downloadURL: urls, cacheKey: imageUrl)
                     DispatchQueue.main.async {
                         self.kf.setImage(with: resource ,options:[.loadDiskFileSynchronously,.transition(ImageTransition.fade(0.5))])
-                        //                    self.kf.cancelDownloadTask()
                     }
                 } else {
                     self.image = UIImage()

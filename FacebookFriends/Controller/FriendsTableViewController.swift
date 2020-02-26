@@ -36,17 +36,26 @@ class FriendsTableViewController: UITableViewController {
         cell.nameLabel.text = friendsArray![indexPath.row].name
         cell.emailLabel.text = friendsArray![indexPath.row].email
         let https = "https" + friendsArray![indexPath.row].picture!.dropFirst(4)
-        cell.imageView?.setImageWithKF(https)
-        cell.imageView?.clipsToBounds = true
-        cell.imageView?.contentMode = .scaleAspectFill
+        cell.profileImage.setImageWithKF(https)
+        if friendsArray![indexPath.row].isActive == true {
+            cell.isActive.tintColor = .green
+        } else {
+            cell.isActive.tintColor = .red
+        }
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(friendsArray![indexPath.row].picture!)
-
-
+        performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! DetailPageViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            destinationVC.indexRow = indexPath.row
+            destinationVC.friendsArray = friendsArray
+        }
     }
     
     

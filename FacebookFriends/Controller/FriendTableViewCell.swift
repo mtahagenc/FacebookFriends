@@ -12,20 +12,14 @@ class FriendTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-//        profileImage.layer.cornerRadius = 5
-//        profileImage.backgroundColor = .lightGray
-//        nameLabel.layer.cornerRadius = 5
-//        nameLabel.layer.masksToBounds = true
-//        nameLabel.backgroundColor = .lightGray
-//        emailLabel.layer.cornerRadius = 5
-//        emailLabel.layer.masksToBounds = true
-//        emailLabel.backgroundColor = .lightGray
+        profileImage.layer.cornerRadius = 5
     }
 
     
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var isActive: UIImageView!
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
