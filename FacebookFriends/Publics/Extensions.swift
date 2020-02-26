@@ -18,6 +18,7 @@ extension Int {
 
 extension UIImageView {
     @objc func setImageWithKF(_ url : String?) {
+        //Downloading the with KingFisher library
         if let imageUrl = url {
             if let urls = URL(string : imageUrl) {
                 if imageUrl != "" {
@@ -35,7 +36,20 @@ extension UIImageView {
             self.image = UIImage()
         }
     }
-    
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        //We are creating a function for hiding the keyboard.
+        //We are using extensions to create it because we may need the function in any viewController
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
 

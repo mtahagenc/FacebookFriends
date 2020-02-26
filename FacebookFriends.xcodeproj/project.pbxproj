@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		60841DE04C620C90E8232275 /* Pods_FacebookFriends.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B54B593BF816B75B8E2D25AD /* Pods_FacebookFriends.framework */; };
-		8A1B4842240505AD00D6E0A6 /* PublicVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B4841240505AD00D6E0A6 /* PublicVariables.swift */; };
 		8A1B484924051A1700D6E0A6 /* FriendsDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B484824051A1700D6E0A6 /* FriendsDetailModel.swift */; };
 		8A3818A12405BDC5007F4088 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3818A02405BDC5007F4088 /* DetailPageViewController.swift */; };
 		8A6F7A9F2406A2AE00832EEC /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6F7A9E2406A2AE00832EEC /* MapViewController.swift */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		79966519EB3BCB47E682E9E7 /* Pods-FacebookFriends.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FacebookFriends.debug.xcconfig"; path = "Target Support Files/Pods-FacebookFriends/Pods-FacebookFriends.debug.xcconfig"; sourceTree = "<group>"; };
-		8A1B4841240505AD00D6E0A6 /* PublicVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicVariables.swift; sourceTree = "<group>"; };
 		8A1B484824051A1700D6E0A6 /* FriendsDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsDetailModel.swift; sourceTree = "<group>"; };
 		8A3818A02405BDC5007F4088 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
 		8A6F7A9E2406A2AE00832EEC /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 		8A1B4843240505B400D6E0A6 /* Publics */ = {
 			isa = PBXGroup;
 			children = (
-				8A1B4841240505AD00D6E0A6 /* PublicVariables.swift */,
 				8A8BF98C240522600053BB18 /* Extensions.swift */,
 			);
 			path = Publics;
@@ -280,7 +277,6 @@
 				8A8BF98D240522600053BB18 /* Extensions.swift in Sources */,
 				8A7B800F2404FB7000C21FBC /* AppDelegate.swift in Sources */,
 				8A7B80112404FB7000C21FBC /* SceneDelegate.swift in Sources */,
-				8A1B4842240505AD00D6E0A6 /* PublicVariables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

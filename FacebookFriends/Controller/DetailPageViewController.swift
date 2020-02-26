@@ -9,7 +9,20 @@
 import UIKit
 
 class DetailPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+    //MARK: - Variables and Constants
+    var indexRow: Int? = nil
+    var friendsArray: [Friend]? = nil
     
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        details(indexRow!)
+    }
+    
+    // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return friendsArray![indexRow!].favorite_friends.count
@@ -31,6 +44,7 @@ class DetailPageViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //We are changing the height of the rows by its row number.
         if indexPath.row == 0 {
             return 30
         } else {
@@ -38,20 +52,8 @@ class DetailPageViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
 
-
-    var indexRow: Int? = nil
-    var friendsArray: [Friend]? = nil
     
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        details(indexRow!)
-    }
-    
-    //MARK: -IBOutlets, Actions
-    
+    //MARK: - IBOutlets
     @IBOutlet weak var profilePicture: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var companyNameLabel: UILabel!
@@ -62,15 +64,19 @@ class DetailPageViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var aboutTextView: UITextView!
     @IBOutlet weak var favoriteFriends: UITableView!
     
+    //MARK: - IBActions
     @IBAction func goTOMapBtn(_ sender: Any) {
         performSegue(withIdentifier: "showMap", sender: self)
     }
+    
+    //MARK: - Functions
     func details (_ rowInt: Int) {
         let friend = friendsArray![rowInt]
         
         if friend.picture != nil {
             let https = "https" + friend.picture!.dropFirst(4)
             profilePicture.setImageWithKF(https)
+        //The url that we recieved from the json is not with https so we are adding https instead of http.
         }
         
         nameLabel.text = friend.name ?? "No Name"
@@ -88,6 +94,7 @@ class DetailPageViewController: UIViewController, UITableViewDelegate, UITableVi
         aboutTextView.text = "About: \(friend.about ?? "No Info")"
     }
     
+    //MARK: - Navigation Functions
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! MapViewController
         destinationVC.friendsArray = friendsArray

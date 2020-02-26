@@ -81,9 +81,9 @@
         <!--Friends Table View Controller-->
         <scene sceneID="BQF-i8-u1M">
             <objects>
-                <tableViewController modalPresentationStyle="fullScreen" id="HyT-Oe-QIq" customClass="FriendsTableViewController" customModule="FacebookFriends" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="HyT-Oe-QIq" customClass="FriendsTableViewController" customModule="FacebookFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cj8-8x-5i4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
