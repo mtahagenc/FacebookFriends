@@ -8,7 +8,16 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, sendDataProtocol {
+    
+    
+    //MARK: - Protocol Functions
+    func getIndexPath() -> IndexPath {
+        let indexPath = tableView.indexPathForSelectedRow
+            return indexPath!
+    }
+    
+    
     
     // MARK: - Variables and Constants
     var friendsArray : [Friend]? = nil
@@ -64,10 +73,8 @@ class FriendsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! DetailPageViewController
-        if let indexPath = tableView.indexPathForSelectedRow {
-            destinationVC.indexRow = indexPath.row
+            destinationVC.delegate = self
             destinationVC.friendsArray = friendsArray
-        }
     }
     
     

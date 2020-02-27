@@ -8,9 +8,15 @@
 
 import UIKit
 
+//MARK: - Protocols
+protocol sendDataProtocol {
+    func getIndexPath()-> IndexPath
+}
+
 class DetailPageViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     //MARK: - Variables and Constants
+    var delegate:sendDataProtocol?
     var indexRow: Int? = nil
     var friendsArray: [Friend]? = nil
     
@@ -19,13 +25,13 @@ class DetailPageViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        details(indexRow!)
+        details((delegate?.getIndexPath().row)!)
     }
     
     // MARK: - Table view data source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return friendsArray![indexRow!].favorite_friends.count
+        return friendsArray![(delegate?.getIndexPath().row)!].favorite_friends.count
     }
     
     
@@ -37,7 +43,7 @@ class DetailPageViewController: UIViewController, UITableViewDelegate, UITableVi
 //            cell?.textLabel?.textAlignment = .center
             return cell!
         } else {
-            cell?.textLabel?.text = friendsArray![indexRow!].favorite_friends[indexPath.row]?.name
+            cell?.textLabel?.text = friendsArray![(delegate?.getIndexPath().row)!].favorite_friends[indexPath.row]?.name
             return cell!
         }
         
@@ -98,7 +104,7 @@ class DetailPageViewController: UIViewController, UITableViewDelegate, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! MapViewController
         destinationVC.friendsArray = friendsArray
-        destinationVC.indexRow = indexRow
+        destinationVC.indexRow = (delegate?.getIndexPath().row)!
     }
     
 }

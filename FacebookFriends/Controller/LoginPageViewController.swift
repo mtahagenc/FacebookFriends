@@ -17,14 +17,8 @@ class LoginPageViewController: UIViewController {
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
-        userNameTextField.text = "zdah4"
-        passwordTextField.text = "hebele"
         blurEffect()
         self.hideKeyboardWhenTappedAround()
-
-        
     }
     
     //MARK: - IBOutlets and Actions
@@ -87,7 +81,8 @@ class LoginPageViewController: UIViewController {
             case .Succeed :
                 self.FriendsArray = model
                 self.performSegue(withIdentifier: "login", sender: self)
-            case .Failed : print("Error Failed")                
+            case .Failed : print("Error Failed")
+                self.alert(alertTitle: "Check the Internet Connection", actionTitle: "Ok")
             case .FailedDecode : print("Error FailedDecode")
                 self.alert(alertTitle: "Check Username or Password", actionTitle: "Ok")
             default : break
