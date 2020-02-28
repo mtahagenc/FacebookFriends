@@ -77,5 +77,11 @@ class FriendsTableViewController: UITableViewController, sendDataProtocol {
             destinationVC.friendsArray = friendsArray
     }
     
+
+    @IBAction func barButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     
 }

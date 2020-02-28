@@ -76,19 +76,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="-241" y="127"/>
         </scene>
         <!--Friends Table View Controller-->
         <scene sceneID="BQF-i8-u1M">
             <objects>
-                <tableViewController id="HyT-Oe-QIq" customClass="FriendsTableViewController" customModule="FacebookFriends" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController modalPresentationStyle="fullScreen" id="HyT-Oe-QIq" customClass="FriendsTableViewController" customModule="FacebookFriends" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cj8-8x-5i4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="tiz-w5-YWb">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <items>
+                                <navigationItem title="Facebook Friends" id="XW9-PW-NZb">
+                                    <barButtonItem key="leftBarButtonItem" title="Back" id="0bf-SV-EuU">
+                                        <connections>
+                                            <action selector="barButton:" destination="HyT-Oe-QIq" id="yN8-kT-zW3"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </navigationItem>
+                            </items>
+                        </navigationBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FriendCell" rowHeight="71" id="77O-ub-Xdc" customClass="FriendTableViewCell" customModule="FacebookFriends" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="71"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="77O-ub-Xdc" id="8fq-Ky-YL5">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
@@ -150,7 +163,6 @@
                             <outlet property="delegate" destination="HyT-Oe-QIq" id="Ol0-YM-KuH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="n5v-3Q-qWY"/>
                     <connections>
                         <segue destination="vaP-MO-wzA" kind="show" identifier="showDetail" id="GRQ-Rn-joG"/>
                     </connections>

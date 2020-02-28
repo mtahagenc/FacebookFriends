@@ -13,7 +13,7 @@ public struct Friend : Decodable {
     // This is the data model that we want to use in our app.
     let id : String?
     let isActive : Bool?
-    let picture : String?
+    let picture : String? 
     let age : Int?
     let eyeColor : String?
     let name : String?
